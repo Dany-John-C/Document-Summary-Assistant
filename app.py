@@ -344,13 +344,12 @@ def format_key_points_html(key_points_raw: str) -> str:
 # ─── Sidebar ──────────────────────────────────────────────────────────────────
 
 with st.sidebar:
-    st.markdown("## ⚙️ Configuration")
-    st.markdown("---")
-
     # Check if API key is stored in Streamlit Secrets, otherwise show input
     if "GROQ_API_KEY" in st.secrets:
         groq_api_key = st.secrets["GROQ_API_KEY"]
     else:
+        st.markdown("## ⚙️ Configuration")
+        st.markdown("---")
         groq_api_key = st.text_input(
             "🔑 Groq API Key",
             type="password",
@@ -359,6 +358,7 @@ with st.sidebar:
         )
         if not groq_api_key:
             st.info("👆 Enter your free Groq API key to enable summarization.", icon="ℹ️")
+        st.markdown("---")
 
     st.markdown("---")
     st.markdown("## 📏 Summary Length")
@@ -417,16 +417,18 @@ with col_upload:
     )
 
 with col_info:
-    st.markdown("<div class='glass-card'>", unsafe_allow_html=True)
-    st.markdown("### 🚀 How it works")
     st.markdown("""
-1. **Upload** a PDF or image document  
-2. **Choose** your preferred summary length  
-3. **Enter** your free Groq API key in the sidebar  
-4. **Click** Generate Summary  
-5. **Download** your summary as a text file  
-    """)
-    st.markdown("</div>", unsafe_allow_html=True)
+    <div class='glass-card'>
+      <h3 style='margin-top: 0; color: #e2e8f0;'>🚀 How it works</h3>
+      <ol style='color: #cbd5e1; line-height: 1.8; margin-bottom: 0;'>
+        <li><strong>Upload</strong> a PDF or image document</li>
+        <li><strong>Choose</strong> your preferred summary length</li>
+        <li><strong>Enter</strong> your free Groq API key in the sidebar</li>
+        <li><strong>Click</strong> Generate Summary</li>
+        <li><strong>Download</strong> your summary as a text file</li>
+      </ol>
+    </div>
+    """, unsafe_allow_html=True)
 
 # ─── Main Processing ──────────────────────────────────────────────────────────
 
