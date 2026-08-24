@@ -290,7 +290,7 @@ def generate_summary(api_key: str, text: str, length: str) -> tuple[str, str]:
 
     try:
         response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
+            model="mixtral-8x7b-32768",
             messages=[
                 {
                     "role": "system",
