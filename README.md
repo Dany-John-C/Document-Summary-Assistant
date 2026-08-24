@@ -2,7 +2,7 @@
 
 > An intelligent document analysis tool that extracts text from PDFs and scanned images, then generates smart AI-powered summaries using the Groq API (Llama 3).
 
-🔗 **Live App:** _[Add your Streamlit Community Cloud URL here after deployment]_
+🔗 **Live App:** _[Document Summary Assistant](https://document-summary-assistant-ax3y5rry9aqkfchnjxvce6.streamlit.app/)_
 
 ---
 
