@@ -423,7 +423,6 @@ with col_info:
       <ol style='color: #cbd5e1; line-height: 1.8; margin-bottom: 0;'>
         <li><strong>Upload</strong> a PDF or image document</li>
         <li><strong>Choose</strong> your preferred summary length</li>
-        <li><strong>Enter</strong> your free Groq API key in the sidebar</li>
         <li><strong>Click</strong> Generate Summary</li>
         <li><strong>Download</strong> your summary as a text file</li>
       </ol>
