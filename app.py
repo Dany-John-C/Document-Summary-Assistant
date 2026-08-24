@@ -347,14 +347,18 @@ with st.sidebar:
     st.markdown("## ⚙️ Configuration")
     st.markdown("---")
 
-    groq_api_key = st.text_input(
-        "🔑 Groq API Key",
-        type="password",
-        placeholder="gsk_...",
-        help="Get your free API key at https://console.groq.com",
-    )
-    if not groq_api_key:
-        st.info("👆 Enter your free Groq API key to enable summarization.", icon="ℹ️")
+    # Check if API key is stored in Streamlit Secrets, otherwise show input
+    if "GROQ_API_KEY" in st.secrets:
+        groq_api_key = st.secrets["GROQ_API_KEY"]
+    else:
+        groq_api_key = st.text_input(
+            "🔑 Groq API Key",
+            type="password",
+            placeholder="gsk_...",
+            help="Get your free API key at https://console.groq.com",
+        )
+        if not groq_api_key:
+            st.info("👆 Enter your free Groq API key to enable summarization.", icon="ℹ️")
 
     st.markdown("---")
     st.markdown("## 📏 Summary Length")
